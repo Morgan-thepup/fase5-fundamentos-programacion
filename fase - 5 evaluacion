@@ -4,25 +4,15 @@
 # Problema 4: Videoteca Digital
 # =========================================================
 
-# Función para contar los títulos que cumplen los criterios
 def contar_peliculas(matriz, umbral_calificacion, ano_limite):
     conteo = 0
-    
-    # Recorremos cada fila de la matriz
     for i in range(len(matriz)):
         ano = matriz[i][1]
         calificacion = matriz[i][2]
-        
-        # Lógica de negocio: Calificación >= umbral Y Año >= límite
         if calificacion >= umbral_calificacion and ano >= ano_limite:
             conteo = conteo + 1
             
     return conteo
-
-
-# --- PROGRAMA PRINCIPAL ---
-
-# Matriz con 7 películas: [Título, Año, Calificación, Género]
 videoteca = [
     ["Inception", 2010, 8.8, "Ciencia Ficción"],
     ["Spider-Man", 2023, 8.7, "Animación"],
@@ -32,15 +22,9 @@ videoteca = [
     ["Interstellar", 2014, 8.6, "Ciencia Ficción"],
     ["Madame Web", 2024, 3.8, "Acción"]
 ]
-
-# Definimos los criterios
 min_calificacion = 8.5
 min_ano = 2020
-
-# Llamamos a la función
 total = contar_peliculas(videoteca, min_calificacion, min_ano)
-
-# Mostramos el resultado final
 print("=== RESULTADO DE LA VIDEOTECA ===")
 print("Criterios: Calificación >=", min_calificacion, "y Año >=", min_ano)
 print("Cantidad de títulos que cumplen:", total)
